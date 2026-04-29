@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar Marmita</title>
+    <link rel="stylesheet" href="{% static 'marmitas/css/style.css' %}">
+</head>
+<body>
+    <h1>Tem certeza?</h1>
+
+    <p>Você deseja deletar a marmita:</p>
+
+    <h2>{{ marmita.nome }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <button type="submit">
+            Confirmar exclusão
+        </button>
+    </form>
+
+    <a href="{% url 'marmitas:home' %}">
+        Cancelar
+    </a>
+</body>
+</html>

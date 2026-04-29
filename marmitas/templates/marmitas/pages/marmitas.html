@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio de Marmitas</title>
+    <link rel="stylesheet" href="{% static 'marmitas/css/style.css' %}">
+</head>
+<body>
+    <header>
+        {% if user.is_staff %}
+            <a href="{% url 'marmitas:criar' %}">Criar</a>
+        {% endif %}
+    </header>
+    <main>
+        <h1>Marmitas</h1>
+        {% for marmita in marmitas %}
+            <div>
+                <h2>{{ marmita.nome }}</h2>
+                <p>{{ marmita.descricao }}</p>
+                <p>{{ marmita.peso }} g</p>
+                <p>R$ {{ marmita.preco }}</p>
+                {% if user.is_staff %}
+                    <a href="{% url 'marmitas:editar' marmita.id %}">Editar</a>
+                    <a href="{% url 'marmitas:deletar' marmita.id %}">❌</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </main>
+</body>
+</html>

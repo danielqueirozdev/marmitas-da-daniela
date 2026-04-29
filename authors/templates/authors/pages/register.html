@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'authors/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="{% url 'authors:register_create' %}" method="POST">
+            {% csrf_token %}
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% for field in form %}
+            <div>
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <div style="color: red;">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% if form.non_field_errors %}
+                <div style="color: red;">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            {% if form.errors %}
+            <div style="color: red;">
+                <p>There are errors in the form, fix them and send again.</p>
+            </div>
+            {% endif %}
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>
