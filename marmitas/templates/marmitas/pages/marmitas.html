@@ -22,6 +22,8 @@
                 <p>{{ marmita.descricao }}</p>
                 <p>{{ marmita.peso }} g</p>
                 <p>R$ {{ marmita.preco }}</p>
+
+                <a href="{% url 'marmitas:detail' marmita.id %}">Ver detalhes</a>
                 {% if user.is_staff %}
                     <a href="{% url 'marmitas:editar' marmita.id %}">Editar</a>
                     <a href="{% url 'marmitas:deletar' marmita.id %}">❌</a>

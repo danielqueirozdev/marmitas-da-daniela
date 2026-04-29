@@ -9,4 +9,5 @@ urlpatterns = [
    path('criar/', views.marmitas_create_view, name='criar'),
    path('editar/<int:id>/', views.marmitas_edit_view, name='editar'),
    path('deletar/<int:id>/', views.marmitas_delete_view, name='deletar'),
+   path('marmita/<int:id>/', views.marmita_detail_view, name='detail'),
 ]

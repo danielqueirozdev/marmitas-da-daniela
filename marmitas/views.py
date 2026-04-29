@@ -62,3 +62,10 @@ def marmitas_delete_view(request, id):
     return render(request, 'marmitas/pages/marmitas_delete.html', {
         'marmita': marmita
     })
+
+def marmita_detail_view(request, id):
+    marmita = get_object_or_404(Marmita, pk=id)
+
+    return render(request, 'marmitas/pages/detail.html', {
+        'marmita': marmita
+    })

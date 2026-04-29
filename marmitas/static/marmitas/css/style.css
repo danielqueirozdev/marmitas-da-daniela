@@ -85,15 +85,27 @@ main > div a {
     transition: 0.2s;
 }
 
+/* botão detalhes */
 main > div a:first-of-type {
-    background-color: #f59e0b;
+    background-color: #2563eb;
     color: white;
 }
 
 main > div a:first-of-type:hover {
+    background-color: #1d4ed8;
+}
+
+/* botão editar */
+main > div a:nth-of-type(2) {
+    background-color: #f59e0b;
+    color: white;
+}
+
+main > div a:nth-of-type(2):hover {
     background-color: #d97706;
 }
 
+/* botão deletar */
 main > div a:last-of-type {
     background-color: #dc2626;
     color: white;
@@ -199,6 +211,142 @@ form a {
 
 form a:hover {
     background-color: #4b5563;
+}
+
+/* =========================
+   DETAIL PAGE
+========================= */
+
+.detail-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.detail-header {
+    margin-bottom: 35px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 20px;
+}
+
+.detail-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.detail-price {
+    font-size: 30px;
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.detail-card {
+    background-color: #f9fafb;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.detail-card h2 {
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.detail-card p {
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+.detail-info {
+    margin-top: 25px;
+}
+
+.detail-info p {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.detail-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.detail-actions a {
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-back {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #4b5563;
+}
+
+.btn-edit {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #d97706;
+}
+
+.btn-delete {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #b91c1c;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-title {
+        font-size: 32px;
+    }
+
+    .detail-price {
+        font-size: 24px;
+    }
+
+    .detail-container {
+        padding: 25px;
+    }
+
+    .detail-actions {
+        flex-direction: column;
+    }
+
+    .detail-actions a {
+        text-align: center;
+    }
 }
 
 /* =========================
