@@ -35,7 +35,7 @@ def register_create_view(request):
         data_user.set_password(data_user.password)
 
         data_user.save()
-        messages.success(request, 'Your account is created, please log in.')
+        messages.success(request, 'Conta criada com sucesso. Faça o login.')
 
         del(form)
         return redirect(reverse('authors:login'))
@@ -67,15 +67,15 @@ def login_create_view(request):
         )
 
         if authenticated_user is not None:
-            messages.success(request, 'You are logged in.')
+            messages.success(request, 'Login realizado com sucesso.')
             login(request, authenticated_user)
             return redirect('marmitas:home')
         
-        messages.error(request, 'Invalid credentials.')
+        messages.error(request, 'Usuário ou senha inválidos.')
 
         return redirect(login_url)
     
-    messages.error(request, 'Invalid credentials.')
+    messages.error(request, 'Usuário ou senha inválidos.')
 
     return redirect(login_url)
 

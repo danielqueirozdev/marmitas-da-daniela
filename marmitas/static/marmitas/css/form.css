@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    padding: 24px 16px;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+section header {
+    margin-bottom: 28px;
+}
+
+section header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+section header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+}
+
+small {
+    display: block;
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+ul.errorlist {
+    list-style: none;
+    margin-top: 5px;
+    color: #dc2626;
+    font-size: 13px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+button[type="submit"] {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #15803d;
+}
+
+.btn-cancel {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #6b7280;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #4b5563;
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 22px 16px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        text-align: center;
+        width: 100%;
+    }
+}

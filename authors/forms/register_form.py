@@ -8,89 +8,74 @@ def strong_password(password):
     regex = re.compile(r'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$')
 
     if not regex.match(password):
-        raise ValidationError('''
-            Weak password: Your password must include:
-            - 8 or more characters
-            - At least one lowercase letter
-            - At least one uppercase letter
-        ''')
-    
+        raise ValidationError(
+            'Senha fraca. Sua senha deve ter: no mínimo 8 caracteres, '
+            'uma letra maiúscula e uma letra minúscula.'
+        )
+
 
 class RegisterForm(forms.ModelForm):
     class Meta:
-        model =  User
+        model = User
         fields = [
-            'first_name',
-            'last_name',
             'username',
             'email',
             'password',
         ]
         labels = {
-            'first_name': 'First name',
-            'last_name': 'Last name',
-            'username': 'Username',
+            'username': 'Usuário',
             'email': 'E-mail',
-            'password': 'Password',
-        }
-        help_texts = {
-            'first_name': 'Put your first name',
-            'last_name': 'Put your last name',
-            'username': 'Put your username',
-            'email': 'Put your e-mail',
-            'password': 'Put your password',
+            'password': 'Senha',
         }
         error_messages = {
-            'first_name': {
-                'required': 'This field must not be empty'
-            },
-            'last_name': {
-                'required': 'This field must not be empty'
-            },
             'username': {
-                'required': 'This field must not be empty'
+                'required': 'Este campo é obrigatório'
             },
             'email': {
-                'required': 'This field must not be empty'
+                'required': 'Este campo é obrigatório'
             },
             'password': {
-                'required': 'This field must not be empty'
+                'required': 'Este campo é obrigatório'
             },
         }
         widgets = {
             'username': forms.TextInput(attrs={
-                'placeholder': 'Type your username here'
+                'placeholder': 'Seu nome de usuário'
             }),
             'password': forms.PasswordInput(),
         }
 
-    first_name = forms.CharField(
-        required=True,
-    )
-
-    last_name = forms.CharField(
-        required=True,
-    )
-
     email = forms.EmailField(
         required=True,
+        label='E-mail',
+        error_messages={
+            'required': 'Este campo é obrigatório'
+        },
     )
 
     password = forms.CharField(
         required=True,
-        widget=forms.PasswordInput(),
-        validators=[strong_password]
+        label='Senha',
+        widget=forms.PasswordInput(attrs={
+            'placeholder': 'Sua senha'
+        }),
+        validators=[strong_password],
+        error_messages={
+            'required': 'Este campo é obrigatório'
+        },
     )
 
     confirm_password = forms.CharField(
         required=True,
+        label='Confirmar senha',
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Type your password here'
+            'placeholder': 'Repita a senha'
         }),
-        help_text=('Type your password again')
+        error_messages={
+            'required': 'Este campo é obrigatório'
+        },
     )
 
-    
     def clean(self):
         cleaned_data = super().clean()
 
@@ -98,10 +83,10 @@ class RegisterForm(forms.ModelForm):
         confirm_password = cleaned_data.get('confirm_password')
 
         if password and confirm_password and password != confirm_password:
-            self.add_error('confirm_password', 'Your two passwords must be the same')
+            self.add_error('confirm_password', 'As senhas não coincidem')
 
         return cleaned_data
-    
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
 
@@ -109,6 +94,6 @@ class RegisterForm(forms.ModelForm):
             return email
 
         if User.objects.filter(email__iexact=email).exists():
-            raise ValidationError('This email is already in use')
+            raise ValidationError('Este e-mail já está em uso')
 
         return email

@@ -6,30 +6,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio de Marmitas</title>
-    <link rel="stylesheet" href="{% static 'marmitas/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'marmitas/css/marmitas.css' %}">
 </head>
 <body>
     <header>
-        {% if user.is_staff %}
-            <a href="{% url 'marmitas:criar' %}">Criar</a>
-        {% endif %}
+        <span></span>
+        <div class="header-actions">
+            {% if user.is_staff %}
+                <a href="{% url 'marmitas:criar' %}">+ Criar marmita</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <form method="POST" action="{% url 'authors:logout' %}" style="margin: 0;">
+                    {% csrf_token %}
+                    <button type="submit" style="background-color: #6b7280; color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">
+                        Sair
+                    </button>
+                </form>
+            {% endif %}
+        </div>
     </header>
-    <main>
-        <h1>Marmitas</h1>
-        {% for marmita in marmitas %}
-            <div>
-                <h2>{{ marmita.nome }}</h2>
-                <p>{{ marmita.descricao }}</p>
-                <p>{{ marmita.peso }} g</p>
-                <p>R$ {{ marmita.preco }}</p>
 
-                <a href="{% url 'marmitas:detail' marmita.id %}">Ver detalhes</a>
-                {% if user.is_staff %}
-                    <a href="{% url 'marmitas:editar' marmita.id %}">Editar</a>
-                    <a href="{% url 'marmitas:deletar' marmita.id %}">❌</a>
-                {% endif %}
-            </div>
-        {% endfor %}
+    <main>
+        <h1>🍱 Marmitas da Dani</h1>
+
+        {% if marmitas %}
+            {% for marmita in marmitas %}
+                <div class="marmita-card">
+                    <h2>{{ marmita.nome }}</h2>
+                    <p>{{ marmita.descricao }}</p>
+                    <p>⚖️ {{ marmita.peso }} g</p>
+                    <p>💰 R$ {{ marmita.preco }}</p>
+
+                    <div class="card-actions">
+                        <a href="{% url 'marmitas:detail' marmita.id %}" class="btn-detail">Ver detalhes</a>
+                        {% if user.is_staff %}
+                            <a href="{% url 'marmitas:editar' marmita.id %}" class="btn-edit">Editar</a>
+                            <a href="{% url 'marmitas:deletar' marmita.id %}" class="btn-delete">Deletar</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="empty-state">Nenhuma marmita cadastrada ainda.</p>
+        {% endif %}
     </main>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Marmitas</title>
-    <link rel="stylesheet" href="{% static 'marmitas/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'marmitas/css/form.css' %}">
 </head>
 <body>
 
@@ -52,12 +52,12 @@
                     </div>
                 {% endif %}
 
-                <div>
+                <div class="form-actions">
                     <button type="submit">
                         Salvar
                     </button>
 
-                    <a href="{% url 'marmitas:home' %}">
+                    <a href="{% url 'marmitas:home' %}" class="btn-cancel">
                         Voltar
                     </a>
                 </div>

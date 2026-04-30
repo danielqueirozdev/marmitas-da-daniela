@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ marmita.nome }}</title>
-
     <link rel="stylesheet" href="{% static 'marmitas/css/detail.css' %}">
 </head>
 <body>
@@ -15,22 +14,17 @@
         <section class="marmita-card">
 
             <div class="marmita-image">
-                <img src="https://placehold.co/700x500" alt="{{ marmita.nome }}">
+                <img src="https://placehold.co/900x400" alt="{{ marmita.nome }}">
             </div>
 
             <div class="marmita-content">
                 <h1>{{ marmita.nome }}</h1>
 
-                <p class="descricao">
-                    {{ marmita.descricao }}
-                </p>
+                <p class="descricao">{{ marmita.descricao }}</p>
 
                 <div class="info-group">
                     <h2>Ingredientes</h2>
-
-                    <p>
-                        {{ marmita.ingredientes }}
-                    </p>
+                    <p>{{ marmita.ingredientes }}</p>
                 </div>
 
                 <div class="details">
@@ -38,16 +32,20 @@
                         <span>Peso</span>
                         <strong>{{ marmita.peso }}g</strong>
                     </div>
-
                     <div class="detail-box">
                         <span>Preço</span>
                         <strong>R$ {{ marmita.preco }}</strong>
                     </div>
                 </div>
 
-                <button class="buy-button">
-                    Pedir agora
-                </button>
+                <div class="card-actions">
+                    <button class="buy-button">Pedir agora</button>
+                    <a href="{% url 'marmitas:home' %}" class="btn-back">Voltar</a>
+                    {% if user.is_staff %}
+                        <a href="{% url 'marmitas:editar' marmita.id %}" class="btn-edit">Editar</a>
+                        <a href="{% url 'marmitas:deletar' marmita.id %}" class="btn-delete">Deletar</a>
+                    {% endif %}
+                </div>
             </div>
 
         </section>

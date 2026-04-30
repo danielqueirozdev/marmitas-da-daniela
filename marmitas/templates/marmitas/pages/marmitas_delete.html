@@ -4,26 +4,27 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deletar Marmita</title>
-    <link rel="stylesheet" href="{% static 'marmitas/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'marmitas/css/delete.css' %}">
 </head>
 <body>
-    <h1>Tem certeza?</h1>
+    <div class="delete-container">
+        <div class="delete-icon">🗑️</div>
 
-    <p>Você deseja deletar a marmita:</p>
+        <h1>Tem certeza?</h1>
 
-    <h2>{{ marmita.nome }}</h2>
+        <p>Você deseja deletar a marmita:</p>
+        <p class="marmita-nome">{{ marmita.nome }}</p>
 
-    <form method="POST">
-        {% csrf_token %}
+        <div class="delete-actions">
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit">Confirmar exclusão</button>
+            </form>
 
-        <button type="submit">
-            Confirmar exclusão
-        </button>
-    </form>
-
-    <a href="{% url 'marmitas:home' %}">
-        Cancelar
-    </a>
+            <a href="{% url 'marmitas:home' %}" class="btn-cancel">Cancelar</a>
+        </div>
+    </div>
 </body>
 </html>

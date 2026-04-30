@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 class Marmita(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     nome = models.CharField(max_length=160, null=False)
-    ingredientes = models.TextField(max_length=260, null=False)
-    descricao = models.TextField(max_length=260, null=False)
+    ingredientes = models.TextField(max_length=360, null=False)
+    descricao = models.TextField(max_length=360, null=False)
     peso = models.IntegerField(null=False)
     preco = models.DecimalField(
         max_digits=6,

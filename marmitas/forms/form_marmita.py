@@ -111,7 +111,7 @@ class MarmitaForm(forms.ModelForm):
                 'A descrição precisa ter pelo menos 10 caracteres'
             )
 
-        if len(descricao) > 260:
+        if len(descricao) > 360:
             raise ValidationError(
                 'A descrição ultrapassou o limite permitido'
             )
@@ -131,7 +131,7 @@ class MarmitaForm(forms.ModelForm):
                 'Informe ingredientes válidos'
             )
 
-        if len(ingredientes) > 260:
+        if len(ingredientes) > 360:
             raise ValidationError(
                 'Os ingredientes ultrapassaram o limite permitido'
             )

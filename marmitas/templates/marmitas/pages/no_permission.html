@@ -1,66 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesso negado</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f4f4f4;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 400px;
-        }
-
-        h1 {
-            color: #cc0000;
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-
-        p {
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #007bff;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 6px;
-            transition: 0.2s;
-            font-weight: bold;
-        }
-
-        a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'marmitas/css/no_permission.css' %}">
 </head>
 
 <body>
     <div class="container">
+        <div class="permission-icon">🔒</div>
+
         <h1>Acesso negado</h1>
 
         <p>

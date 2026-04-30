@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+.container {
+    background-color: white;
+    padding: 36px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 440px;
+    width: 100%;
+}
+
+.container h1 {
+    font-size: 26px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #111827;
+}
+
+.message {
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.message.success {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.message.error {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+form > div {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #374151;
+}
+
+input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+input:focus {
+    border-color: #2563eb;
+}
+
+small {
+    display: block;
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+ul.errorlist {
+    list-style: none;
+    margin-top: 5px;
+    color: #dc2626;
+    font-size: 13px;
+}
+
+.form-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 8px;
+}
+
+input[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.form-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 28px 20px;
+    }
+}
