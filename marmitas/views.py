@@ -11,7 +11,6 @@ def marmitas_view(request):
         'marmitas': marmitas
     })
 
-
 def staff_only(user):
     return user.is_authenticated and user.is_staff
 @user_passes_test(staff_only, login_url='/sem-permissao/')
