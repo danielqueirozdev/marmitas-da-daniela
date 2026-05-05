@@ -5,6 +5,110 @@
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f6f8 0%, #e9ecef 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+.delete-container {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 40px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.delete-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #dc2626;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.delete-container > p {
+    color: #6b7280;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.marmita-nome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #dc2626;
+    margin-bottom: 28px;
+}
+
+.delete-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0,0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cancel {
+    text-decoration: none;
+    display: inline-block;
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cancel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 400px) {
+    .delete-container {
+        padding: 28px 20px;
+    }
+
+    .delete-actions {
+        flex-direction: column;
+    }
+
+    .delete-actions button,
+    .delete-actions a {
+        width: 100%;
+    }
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f6f8;
     color: #333;

@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f6f8 0%, #e9ecef 100%);
     color: #333;
     padding: 24px 16px;
 }
@@ -19,6 +19,10 @@ header {
     margin: 0 auto 30px auto;
     flex-wrap: wrap;
     gap: 10px;
+    background: linear-gradient(135deg, #6a9372 0%, #4f7942 100%);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 header .header-actions {
@@ -29,30 +33,34 @@ header .header-actions {
 
 header a {
     text-decoration: none;
-    background-color: #2563eb;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
     padding: 10px 18px;
     border-radius: 8px;
     font-weight: bold;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header a:hover {
-    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 header a.btn-logout {
-    background-color: #6b7280;
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
 }
 
 header a.btn-logout:hover {
-    background-color: #4b5563;
+    background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
 }
 
 h1 {
     font-size: 32px;
     margin-bottom: 24px;
     text-align: center;
+    color: #2d4739;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 main {
@@ -61,16 +69,24 @@ main {
 }
 
 .marmita-card {
-    background-color: white;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     padding: 20px;
     border-radius: 14px;
     margin-bottom: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease;
+}
+
+.marmita-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .marmita-card h2 {
     font-size: 20px;
     margin-bottom: 8px;
+    color: #2d4739;
 }
 
 .marmita-card p {
@@ -92,34 +108,50 @@ main {
     border-radius: 6px;
     font-weight: bold;
     font-size: 14px;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-detail {
-    background-color: #2563eb;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .btn-detail:hover {
-    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-edit {
-    background-color: #f59e0b;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .btn-edit:hover {
-    background-color: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-delete {
-    background-color: #dc2626;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .btn-delete:hover {
-    background-color: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .empty-state {
@@ -141,4 +173,9 @@ main {
     .marmita-card .card-actions a {
         text-align: center;
     }
+}
+
+/* Adicionando efeito de transição suave para todos os elementos interativos */
+a, button {
+    transition: all 0.3s ease;
 }

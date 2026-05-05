@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f6f8 0%, #e9ecef 100%);
     color: #333;
     padding: 24px 16px;
 }
@@ -17,12 +17,13 @@ body {
 }
 
 .marmita-card {
-    background-color: white;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
+    border: 1px solid #e9ecef;
 }
 
 .marmita-image img {
@@ -39,6 +40,7 @@ body {
 .marmita-content h1 {
     font-size: 32px;
     margin-bottom: 12px;
+    color: #2d4739;
 }
 
 .descricao {
@@ -49,10 +51,11 @@ body {
 }
 
 .info-group {
-    background-color: #f9fafb;
+    background: linear-gradient(145deg, #f8f9fa 0%, #f0f2f5 100%);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 24px;
+    border: 1px solid #e9ecef;
 }
 
 .info-group h2 {
@@ -76,12 +79,13 @@ body {
 .detail-box {
     flex: 1;
     min-width: 120px;
-    background-color: #f9fafb;
+    background: linear-gradient(145deg, #f8f9fa 0%, #f0f2f5 100%);
     border-radius: 12px;
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    border: 1px solid #e9ecef;
 }
 
 .detail-box span {
@@ -106,7 +110,7 @@ body {
 .buy-button {
     flex: 1;
     min-width: 160px;
-    background-color: #16a34a;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
     color: white;
     border: none;
     padding: 14px 20px;
@@ -114,56 +118,64 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .buy-button:hover {
-    background-color: #15803d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-back {
     text-decoration: none;
-    background-color: #6b7280;
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
     color: white;
     padding: 14px 18px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 15px;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-back:hover {
-    background-color: #4b5563;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-edit {
     text-decoration: none;
-    background-color: #f59e0b;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     color: white;
     padding: 14px 18px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 15px;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-edit:hover {
-    background-color: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-delete {
     text-decoration: none;
-    background-color: #dc2626;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: white;
     padding: 14px 18px;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 15px;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 .btn-delete:hover {
-    background-color: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px) {
@@ -188,4 +200,9 @@ body {
         text-align: center;
         width: 100%;
     }
+}
+
+/* Adicionando efeito de transição suave para todos os elementos interativos */
+a, button {
+    transition: all 0.3s ease;
 }
