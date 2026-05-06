@@ -33,9 +33,16 @@
             {% for marmita in marmitas %}
                 <div class="marmita-card">
                     <h2>{{ marmita.nome }}</h2>
-                    <p>{{ marmita.descricao }}</p>
-                    <p>⚖️ {{ marmita.peso }} g</p>
-                    <p>💰 R$ {{ marmita.preco }}</p>
+                    {% if marmita.imagem %}
+                        <img
+                            src="{{ marmita.imagem.url }}"
+                            alt="{{ marmita.nome }}"
+                            width="700"
+                        >
+                    {% endif %}
+                    <p>{{ marmita.descricao|truncatewords:24 }}</p>
+                    <p>Peso: {{ marmita.peso }} g</p>
+                    <p>R$ {{ marmita.preco }}</p>
 
                     <div class="card-actions">
                         <a href="{% url 'marmitas:detail' marmita.id %}" class="btn-detail">Ver detalhes</a>

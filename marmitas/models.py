@@ -13,7 +13,10 @@ class Marmita(models.Model):
         decimal_places=2,
         null=False,
         )
-    # imagem = models.ImageField(null=False)
+    imagem = models.ImageField(
+        upload_to='marmitas/imagens/',
+        null=False,
+    )
 
     def __str__(self):
         return self.nome

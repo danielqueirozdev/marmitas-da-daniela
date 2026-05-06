@@ -13,9 +13,14 @@
     <main class="container">
         <section class="marmita-card">
 
-            <div class="marmita-image">
-                <img src="https://placehold.co/900x400" alt="{{ marmita.nome }}">
-            </div>
+            {% if marmita.imagem %}
+                <div class="marmita-image">
+                    <img 
+                    src="{{ marmita.imagem.url }}" 
+                    alt="{{ marmita.nome }}"
+                    >
+                </div>
+            {% endif %}
 
             <div class="marmita-content">
                 <h1>{{ marmita.nome }}</h1>

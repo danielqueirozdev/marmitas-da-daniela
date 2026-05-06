@@ -13,6 +13,7 @@ class MarmitaForm(forms.ModelForm):
             'ingredientes',
             'peso',
             'preco',
+            'imagem',
         ]
 
         labels = {
@@ -21,6 +22,7 @@ class MarmitaForm(forms.ModelForm):
             'ingredientes': 'Ingredientes',
             'peso': 'Peso (g)',
             'preco': 'Preço (R$)',
+            'imagem': 'Imagem',
         }
 
         help_texts = {
@@ -75,6 +77,10 @@ class MarmitaForm(forms.ModelForm):
                 'placeholder': '19.90',
                 'step': '0.01',
                 'min': '0.01'
+            }),
+            
+            'imagem': forms.ClearableFileInput(attrs={
+                'class': 'form-control',
             }),
         }
 

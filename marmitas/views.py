@@ -16,7 +16,10 @@ def staff_only(user):
 @user_passes_test(staff_only, login_url='/sem-permissao/')
 def marmitas_create_view(request):
     if request.method == 'POST':
-        form = MarmitaForm(request.POST)
+        form = MarmitaForm(
+            request.POST,
+            request.FILES,
+        )
         if form.is_valid():
             marmita = form.save(commit=False)
             marmita.user = request.user
